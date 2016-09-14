@@ -9,6 +9,7 @@ module CapybaraErrorIntel
       matcher = Capybara::RSpecMatchers::HaveText.new(*args)
       match_or_error(matcher)
     end
+    alias_method :has_content?, :has_text?
 
     def has_title?(title, options = {})
       matcher = Capybara::RSpecMatchers::HaveTitle.new(title, options)

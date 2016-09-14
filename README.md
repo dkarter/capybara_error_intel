@@ -42,7 +42,7 @@ end
   methods:
 
   - `has_selector?`
-  - `has_text?`
+  - `has_text?` (and `has_content?` alias)
   - `has_title?`
 
   It should be rather trivial to add more of them like `has_css` etc. I will try
