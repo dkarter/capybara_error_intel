@@ -1,15 +1,15 @@
 # CapybaraErrorIntel
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/CapybaraErrorIntel`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Capybara provides excellent error messages for it's built in predicate methods: has_selector?, has_text?, and has_title? but when those are used from Page Objects while exposing predicate methods from the PageObjects themselves the error messages are lost and all we get is "expected true, got false".  Including this module into your PageObject by adding "include CapybaraErrorIntel::DSL" after "include Capybara::DSL" will return the heuristic error messages.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'CapybaraErrorIntel'
+group :test do
+  gem 'capybara_error_intel'
+end
 ```
 
 And then execute:
@@ -18,11 +18,38 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install CapybaraErrorIntel
+    $ gem install capybara_error_intel
 
 ## Usage
 
-TODO: Write usage instructions here
+Simply include at the top of your PageObject, **after** `include Capybara::DSL`.
+Then use the built in Capybara::DSL as you are used to.
+
+```ruby
+module Pages
+  class PostIndex
+    include Capybara::DSL
+    include CapybaraErrorIntel::DSL
+
+    def on_page?
+      has_selector?('h1', text: 'Posts')
+    end
+  end
+end
+```
+
+  Note: currently this gem only supports the following Capybara built-in predicate
+  methods:
+
+  - `has_selector?`
+  - `has_text?`
+  - `has_title?`
+
+  It should be rather trivial to add more of them like `has_css` etc. I will try
+  to implement the rest in the near future but feel free to submit a pull
+  request.
+
+
 
 ## Development
 
@@ -32,7 +59,12 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/CapybaraErrorIntel.
+Bug reports and pull requests are welcome on GitHub at
+https://github.com/dkarter/capybara_error_intel
+
+Please make sure the test suite passes and that you added tests for any new
+method implemented.
+
 
 
 ## License
