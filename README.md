@@ -1,4 +1,4 @@
-# CapybaraErrorIntel
+![CapybaraErrorIntel](CapybaraErrorIntel.png)
 
 Capybara provides excellent error messages for it's built in predicate methods: has_selector?, has_text?, and has_title? but when those are used from Page Objects while exposing predicate methods from the PageObjects themselves the error messages are lost and all we get is "expected true, got false".  Including this module into your PageObject by adding "include CapybaraErrorIntel::DSL" after "include Capybara::DSL" will return the heuristic error messages.
 
