@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['jobs@doriankarter.com']
 
   spec.summary       = %q{Provides Capybara's heuristic error messages for Page Objects}
-  spec.description   = %q{Capybara provides excellent error messages for it's
+  spec.description   = %q{Capybara provides excellent error messages for its
                           built in predicate methods: has_selector?, has_text?,
                           and has_title? but when those are used from Page
                           Objects while exposing predicate methods from the
