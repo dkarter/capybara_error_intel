@@ -48,6 +48,18 @@ module Pages
 end
 ```
 
+Now this page object can be used in an expressive assertion like so:
+
+```ruby
+feature "User signs in" do
+  scenario "redirected to posts index after sign in" do
+    #... do the sign in dance
+    post_index = Pages::PostIndex.new
+    expect(post_index).to be_on_page
+  end
+end
+```
+
   Note: currently this gem only supports the following Capybara built-in predicate
   methods:
 
