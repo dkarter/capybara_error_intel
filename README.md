@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/dkarter/capybara_error_intel.svg?branch=master)](https://travis-ci.org/dkarter/capybara_error_intel)
 
-Capybara provides excellent error messages for its built in predicate methods: `has_selector?`, `has_text?`, and `has_title?` but when those are used from Page Objects while exposing predicate methods from the PageObjects themselves the error messages are lost and all we get is `expected true, got false`.  Including this module into your PageObject by adding `include CapybaraErrorIntel::DSL` after `include Capybara::DSL` will return the heuristic error messages.
+Capybara provides excellent error messages for its built in predicate methods: `has_selector?`, `has_text?`, `has_title?` etc., but when those are used from Page Objects while exposing predicate methods from the PageObjects themselves the error messages are lost and all we get is `expected true, got false`.  Including this module into your PageObject by adding `include CapybaraErrorIntel::DSL` after `include Capybara::DSL` will return the heuristic error messages.
 
 ## Example
 
@@ -76,9 +76,7 @@ end
   - `has_table?(locator, options={})`
 
 
-  It should be rather trivial to add more of them like `has_css` etc. I will try
-  to implement the rest in the near future but feel free to submit a pull
-  request.
+  It should be rather trivial to add more of them. Please open an issue or submit a pull request if something you need is missing.
 
 
 
