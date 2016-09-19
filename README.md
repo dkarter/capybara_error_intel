@@ -63,9 +63,18 @@ end
   Note: currently this gem only supports the following Capybara built-in predicate
   methods:
 
-  - `has_selector?`
-  - `has_text?` (and `has_content?` alias)
-  - `has_title?`
+  - `has_selector?(*args)`
+  - `has_text?(*args)` (and `has_content?` alias)
+  - `has_title?(title, options={})`
+  - `has_css?(css, options={})`
+  - `has_button?(locator, options={})`
+  - `has_field?(locator, options={})`
+  - `has_xpath?(xpath, options={})`
+  - `has_checked_field?(locator, options={})`
+  - `has_unchecked_field?(locator, options={})`
+  - `has_select?(locator, options={})`
+  - `has_table?(locator, options={})`
+
 
   It should be rather trivial to add more of them like `has_css` etc. I will try
   to implement the rest in the near future but feel free to submit a pull

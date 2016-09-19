@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Provides Capybara's heuristic error messages for Page Objects}
   spec.description   = %q{Capybara provides excellent error messages for its
                           built in predicate methods: has_selector?, has_text?,
-                          and has_title? but when those are used from Page
+                          has_title? etc.. but when those are used from Page
                           Objects while exposing predicate methods from the
                           PageObjects themselves the error messages are lost
                           and all we get is "expected true, got false".
