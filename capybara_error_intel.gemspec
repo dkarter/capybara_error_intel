@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Dorian Karter']
   spec.email         = ['jobs@doriankarter.com']
 
-  spec.summary       = %q{Provides Capybara's heuristic error messages for Page Objects}
-  spec.description   = %q{Capybara provides excellent error messages for its
+  spec.summary       = 'Provides Capybara\'s heuristic error messages for Page Objects'
+  spec.description   = 'Capybara provides excellent error messages for its
                           built in predicate methods: has_selector?, has_text?,
                           has_title? etc.. but when those are used from Page
                           Objects while exposing predicate methods from the
@@ -19,12 +19,12 @@ Gem::Specification.new do |spec|
                           Including this module into your PageObject by adding
                           "include CapybaraErrorIntel::DSL" after
                           "include Capybara::DSL" will return the heuristic
-                          error messages.}
+                          error messages.'
   spec.homepage      = 'https://github.com/dkarter/capybara_error_intel'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 1.12'
   spec.add_development_dependency 'rake', '~> 10.0'
@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rack-test', '~> 0.5', '>= 0.5.4'
   spec.add_development_dependency 'pry', '~> 0.10'
   spec.add_development_dependency 'pry-byebug', '~> 3.4'
+  spec.add_development_dependency 'rubocop', '~> 0.43'
 
   spec.add_runtime_dependency 'rspec', '~> 2.1'
   spec.add_runtime_dependency 'capybara', '~> 2'
