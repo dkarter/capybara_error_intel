@@ -1,3 +1,8 @@
+if ENV.fetch('CODECLIMATE_REPO_TOKEN', false)
+  require 'codeclimate-test-reporter'
+  CodeClimate::TestReporter.start
+end
+
 if ENV['COVERAGE'] =~ /\Atrue\z/i
   require 'simplecov'
   require 'cadre/simplecov'
