@@ -9,3 +9,4 @@
 /tmp/
 /vendor/bundle
 *.gem
+.cadre
