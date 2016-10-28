@@ -39,6 +39,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'simplecov'
   spec.add_development_dependency 'codeclimate-test-reporter'
 
-  spec.add_runtime_dependency 'rspec', '~> 2'
+  spec.add_runtime_dependency 'rspec', '>= 2.1', '< 4.x'
   spec.add_runtime_dependency 'capybara', '~> 2'
 end
