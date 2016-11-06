@@ -79,6 +79,38 @@ end
   It should be rather trivial to add more of them. Please open an issue or submit a pull request if something you need is missing.
 
 
+### Accessing original predicate methods from your Page Object
+
+If you ever need to access the overwritten Capybara predicate methods you can do
+so by using Capybara's `page` for example:
+
+
+```ruby
+module Pages
+  class PostIndex
+    include Capybara::DSL
+    include CapybaraErrorIntel::DSL
+
+    def has_header?(header_text)
+      page.has_selector?('h1', text: header_text)
+    end
+  end
+end
+
+```
+
+This will allow you to have negative assertions. That being said I strongly
+discourage the use of negative assertions, especially with waiting Capybara
+methods such as `has_selector?` since they can make your test suite really slow.
+
+```ruby
+expect(post_index_page).to_not have_header('POSTS')
+```
+
+> Note: I'm considering changing CapybaraErrorIntel for v2 to expose the
+> predicate methods as bang methods, both positive and negative e.g.
+> `has_selector!` and `has_no_selector!`. Please share your thoughts in the
+> issues section.
 
 ## Development
 
