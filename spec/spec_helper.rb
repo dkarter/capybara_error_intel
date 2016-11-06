@@ -1,8 +1,3 @@
-if ENV.fetch('CODECLIMATE_REPO_TOKEN', false)
-  require 'codeclimate-test-reporter'
-  CodeClimate::TestReporter.start
-end
-
 if ENV['COVERAGE'] =~ /\Atrue\z/i
   require 'simplecov'
   require 'cadre/simplecov'
@@ -12,9 +7,6 @@ if ENV['COVERAGE'] =~ /\Atrue\z/i
     add_filter '/spec/'
     add_filter '/config/'
     add_group 'Libraries', 'lib'
-    add_group 'Long Files' do |src_file|
-      src_file.lines.count > 300
-    end
     add_group 'Ignored Code' do |src_file|
       File.readlines(src_file.filename).grep(/:nocov:/).any?
     end
