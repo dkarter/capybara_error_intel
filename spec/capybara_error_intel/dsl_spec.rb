@@ -25,7 +25,7 @@ describe CapybaraErrorIntel::DSL do
         expect(Example.new).to have_selector_test
       end.to raise_error(
         RSpec::Expectations::ExpectationNotMetError,
-        'expected to find css "h1" with text "test" but there were no matches. Also found "Hello", which matched the selector but not all filters.'
+        'expected to find visible css "h1" with text "test" but there were no matches. Also found "Hello", which matched the selector but not all filters.'
       )
     end
 

@@ -40,5 +40,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'simplecov'
 
   spec.add_runtime_dependency 'rspec', '>= 2.1', '< 4.x'
-  spec.add_runtime_dependency 'capybara', '~> 2'
+  spec.add_runtime_dependency 'capybara', '>= 2.0', '< 4.x'
 end
