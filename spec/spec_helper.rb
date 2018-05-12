@@ -21,7 +21,7 @@ if ENV['COVERAGE'] =~ /\Atrue\z/i
   SimpleCov.command_name 'Rspec'
 end
 
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'capybara_error_intel'
 require 'capybara/spec/spec_helper'
 

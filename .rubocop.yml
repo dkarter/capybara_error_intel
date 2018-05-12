@@ -6,4 +6,6 @@ AllCops:
   Exclude:
     - '*.gemspec'
     - 'vendor/**/*'
-
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/**'
