@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 if ENV['COVERAGE'] =~ /\Atrue\z/i
   require 'simplecov'
   require 'cadre/simplecov'

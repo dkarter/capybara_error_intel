@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module CapybaraErrorIntel
   # Wraps Capybara::DSL
   module DSL

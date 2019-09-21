@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'capybara_error_intel/version'
 require 'capybara_error_intel/dsl'
 require 'capybara'
