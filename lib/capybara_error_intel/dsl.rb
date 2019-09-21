@@ -52,15 +52,23 @@ module CapybaraErrorIntel
     private
 
     def has_selector(*args)
-      Capybara::RSpecMatchers::HaveSelector.new(*args)
+      capybara_matcher_module::HaveSelector.new(*args)
     end
 
     def has_text(*args)
-      Capybara::RSpecMatchers::HaveText.new(*args)
+      capybara_matcher_module::HaveText.new(*args)
     end
 
     def has_title(title, options)
-      Capybara::RSpecMatchers::HaveTitle.new(title, options)
+      capybara_matcher_module::HaveTitle.new(title, options)
+    end
+
+    def capybara_matcher_module
+      if Capybara::VERSION.to_f >= 3.14
+        Capybara::RSpecMatchers::Matchers
+      else
+        Capybara::RSpecMatchers
+      end
     end
 
     def match_or_error(matcher)
