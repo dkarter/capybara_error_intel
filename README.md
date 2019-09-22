@@ -118,6 +118,13 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
+## Releasing a New Version
+0. Add a version header to the top of CHANGELOG.md and list all changes as
+   bullets below the new version number
+1. Change the version number in `lib/capybara_error_intel/version.rb`
+2. In the project's directory run `gem build capybara_error_intel.gemspec`
+3. Push the gem to RubyGems `gem push capybara_error_intel-##VERSION##.gem`
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
@@ -125,8 +132,6 @@ https://github.com/dkarter/capybara_error_intel
 
 Please make sure the test suite passes and that you added tests for any new
 method implemented.
-
-
 
 ## License
 
