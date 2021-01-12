@@ -3,66 +3,66 @@
 module CapybaraErrorIntel
   # Wraps Capybara::DSL
   module DSL
-    def has_selector?(*args)
-      matcher = has_selector(*args)
+    def has_selector?(*args, **kwargs)
+      matcher = has_selector(*args, **kwargs)
       match_or_error(matcher)
     end
 
-    def has_css?(css, options = {})
-      has_selector?(:css, css, options)
+    def has_css?(css, **options)
+      has_selector?(:css, css, **options)
     end
 
-    def has_button?(locator, options = {})
-      has_selector?(:button, locator, options)
+    def has_button?(locator, **options)
+      has_selector?(:button, locator, **options)
     end
 
-    def has_field?(locator, options = {})
-      has_selector?(:field, locator, options)
+    def has_field?(locator, **options)
+      has_selector?(:field, locator, **options)
     end
 
-    def has_xpath?(_xpath, options = {})
-      has_selector?(:xpath, locator, options)
+    def has_xpath?(_xpath, **options)
+      has_selector?(:xpath, locator, **options)
     end
 
-    def has_checked_field?(locator, options = {})
-      has_selector?(:field, locator, options.merge(checked: true))
+    def has_checked_field?(locator, **options)
+      has_selector?(:field, locator, **options.merge(checked: true))
     end
 
-    def has_unchecked_field?(locator, options = {})
-      has_selector?(:field, locator, options.merge(unchecked: true))
+    def has_unchecked_field?(locator, **options)
+      has_selector?(:field, locator, **options.merge(unchecked: true))
     end
 
-    def has_select?(locator, options = {})
-      has_selector?(:select, locator, options)
+    def has_select?(locator, **options)
+      has_selector?(:select, locator, **options)
     end
 
-    def has_table?(locator, options = {})
-      has_selector?(:table, locator, options)
+    def has_table?(locator, **options)
+      has_selector?(:table, locator, **options)
     end
 
-    def has_text?(*args)
-      matcher = has_text(*args)
+    def has_text?(*args, **kwargs)
+      matcher = has_text(*args, **kwargs)
       match_or_error(matcher)
     end
     alias has_content? has_text?
 
-    def has_title?(title, options = {})
-      matcher = has_title(title, options)
+    def has_title?(title, **options)
+      matcher = has_title(title, **options)
       match_or_error(matcher)
     end
 
     private
 
-    def has_selector(*args)
-      capybara_matcher_module::HaveSelector.new(*args)
+    def has_selector(*args, **kwargs)
+      capybara_matcher_module::HaveSelector.new(*args, **kwargs)
     end
 
-    def has_text(*args)
-      capybara_matcher_module::HaveText.new(*args)
+    def has_text(*args, **kwargs)
+      capybara_matcher_module::HaveText.new(*args, **kwargs)
     end
 
-    def has_title(title, options)
-      capybara_matcher_module::HaveTitle.new(title, options)
+    def has_title(title, **options)
+      capybara_matcher_module::HaveTitle.new(title, **options)
     end
 
     def capybara_matcher_module
